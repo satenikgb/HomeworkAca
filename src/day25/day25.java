@@ -67,8 +67,7 @@ public class day25 {
             if (entry.getValue() == 1) {
                 System.out.print(entry.getKey());
                 break;
-            }
-            else
+            } else
                 System.out.println("0");
         }
 
@@ -76,15 +75,18 @@ public class day25 {
 
     public static void longestString(String s) {
         String s1 = "";
+
         for (int i = 0; i < s.length(); i++) {
             Set<Character> set = new HashSet<>();
+
             int j = i;
-            for (; j< s.length(); j++) {
+            for (; j < s.length(); j++) {
                 char c = s.charAt(j);
                 if (set.contains(c)) {
                     break;
                 } else {
                     set.add(c);
+                    System.out.println(set);
                 }
             }
             if (s1.length() < j - i + 1) {
@@ -95,10 +97,9 @@ public class day25 {
     }
 
 
-
     public static void main(String[] args) {
         int[] array = {4, 8, 9, 1, 1, 8, 5, 6};
-        String s = "abcadef";
+        String s = "abba";
         checkDuplicate(array);
         occureOnlyOnce(array);
         System.out.println(checkDuplicate(array));
